@@ -9,13 +9,12 @@
 </head>
 <body>
    <div>
-        <a href="/reserva/listar">atras</a>	
+        <a href="/reserva/listar">listar</a>	
     </div>
     <div>
-    	
      <!--form class="form-group" action="/notesEdit" th:action="@{/notesEdit}" method="post"-->
-    <form class="form-group" action="#" th:action="@{/reserva/actualizar}" th:object="${reserva}" method="post">
-            <input type="hidden" id="res_id" th:field="${reserva.res_id}" />
+    <form class="form-group" action="#" th:action="@{/reserva/crear}" th:object="${reserva}" method="post">
+   			<input type="hidden" id="res_id" th:field="${reserva.res_id}" />
             <input type="hidden" id="cli_id" th:field="${reserva.cli_id}" />
             <input type="hidden" id="des_id" th:field="${reserva.des_id}" />
             <!--Colocar ComboBox Dinamico 
@@ -27,18 +26,18 @@
             </div>
    			 <div class="form-group">
                 <label for="res_hora">Hora Reservada</label>
-                <input type="time"  class="form-control" id="res_hora" th:field="${reserva.res_hora}" />
+                <input type="number"  class="form-control" id="res_hora" th:field="${reserva.res_hora}" />
             </div>            
    			 <div class="form-group">
                 <label for="res_fecha">Fecha de Reservacion</label>
-                <input type="date"  class="form-control" id="res_fecha" th:field="${reserva.res_fecha}" />
+                <input type="number"  class="form-control" id="res_fecha" th:field="${reserva.res_fecha}" />
             </div>
    			 <div class="form-group">
                 <label for="res_fecha_reserva">Fecha Reservada</label>
-                <input type="date"  class="form-control" id="res_fecha_reserva" th:field="${reserva.res_fecha_reserva}" />
+                <input type="number"  class="form-control" id="res_fecha_reserva" th:field="${reserva.res_fecha_reserva}" />
             </div>
-            
-            
+
+
             <button type="submit" class="btn btn-primary">Guardar</button>
             <a href="#" th:href="@{/}" class="btn btn-danger" role="button">Cancel</a>
     </form>
